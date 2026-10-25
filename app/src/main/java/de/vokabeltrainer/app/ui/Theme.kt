@@ -1,0 +1,35 @@
+package de.vokabeltrainer.app.ui
+
+import android.os.Build
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.dynamicDarkColorScheme
+import androidx.compose.material3.dynamicLightColorScheme
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+
+/** Colors of Stapel 1..5, from "neu" (red) to "sitzt" (green). */
+val StackColors = listOf(
+    Color(0xFFD9534F),
+    Color(0xFFF0883E),
+    Color(0xFFE3B341),
+    Color(0xFF8BC34A),
+    Color(0xFF2E9E5B),
+)
+
+@Composable
+fun VokabelTheme(content: @Composable () -> Unit) {
+    val dark = isSystemInDarkTheme()
+    val colors = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+            val context = LocalContext.current
+            if (dark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+        }
+        dark -> darkColorScheme()
+        else -> lightColorScheme()
+    }
+    MaterialTheme(colorScheme = colors, content = content)
+}
