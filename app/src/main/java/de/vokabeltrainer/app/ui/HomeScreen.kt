@@ -20,6 +20,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
@@ -169,6 +170,7 @@ fun HomeScreen(state: UiState, vm: TrainerViewModel) {
                     counts = stackCounts(vocab, state),
                     selected = state.isTopicSelected(language, topic),
                     onToggle = { vm.toggleTopic(topic) },
+                    onShowList = { vm.openList(topic) },
                 )
                 HorizontalDivider(Modifier.padding(start = 64.dp))
             }
@@ -192,7 +194,7 @@ fun StackDot(stack: Int, size: Int = 10) {
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun TopicRow(topic: String, total: Int, counts: IntArray, selected: Boolean, onToggle: () -> Unit) {
+private fun TopicRow(topic: String, total: Int, counts: IntArray, selected: Boolean, onToggle: () -> Unit, onShowList: () -> Unit) {
     Row(
         Modifier.fillMaxWidth().clickable(onClick = onToggle).padding(horizontal = 8.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -214,6 +216,9 @@ private fun TopicRow(topic: String, total: Int, counts: IntArray, selected: Bool
                     }
                 }
             }
+        }
+        IconButton(onClick = onShowList) {
+            Icon(Icons.AutoMirrored.Filled.List, "Vokabeln anzeigen")
         }
     }
 }

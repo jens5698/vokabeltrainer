@@ -28,6 +28,7 @@ Zeilen ohne Fremdwort oder ohne deutsche Bedeutung werden ignoriert.
 
 - Oben die Sprache wählen. Jedes Thema zeigt in Klammern die Anzahl der Vokabeln und darunter die Verteilung auf die 5 Stapel.
 - Abfragerichtung (Fremdsprache → Deutsch, Deutsch → Fremdsprache oder gemischt), Stapel und Themen wählen, dann **Abfrage starten**.
+- Über das Listen-Symbol rechts neben einem Thema siehst du alle Vokabeln dieses Themas, filterbar nach Stapel. Antippen zeigt die Beispielsätze, „Diese abfragen“ startet eine Abfrage genau dieser Liste.
 - Pro Karte „Lösung zeigen“ und dann **Gewusst** oder **Nicht gewusst**.
 
 ### Stapel

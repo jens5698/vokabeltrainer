@@ -13,5 +13,6 @@ fun TrainerApp(viewModel: TrainerViewModel) {
         Screen.HOME -> HomeScreen(state, viewModel)
         Screen.QUIZ -> QuizScreen(state, viewModel)
         Screen.SETTINGS -> SettingsScreen(state, viewModel)
+        Screen.LIST -> ListScreen(state, viewModel)
     }
 }

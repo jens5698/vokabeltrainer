@@ -19,7 +19,7 @@ import kotlinx.coroutines.withContext
 import java.text.DateFormat
 import java.util.Date
 
-enum class Screen { HOME, QUIZ, SETTINGS }
+enum class Screen { HOME, QUIZ, SETTINGS, LIST }
 
 enum class Direction(val label: (Language) -> String) {
     FOREIGN_TO_GERMAN({ "${it.label} → Deutsch" }),
@@ -59,6 +59,8 @@ data class UiState(
     val selectedStacks: Set<Int> = (1..Progress.STACKS).toSet(),
     val direction: Direction = Direction.FOREIGN_TO_GERMAN,
     val quiz: QuizState? = null,
+    /** Topic shown in the vocabulary list. */
+    val listTopic: String? = null,
 ) {
     fun progressOf(vocab: Vocab): Progress = progress[vocab.id] ?: Progress()
 
@@ -152,6 +154,8 @@ class TrainerViewModel(app: Application) : AndroidViewModel(app) {
         }
         s.copy(screen = Screen.QUIZ, quiz = QuizState(s.language, cards))
     }
+
+    fun openList(topic: String) = _state.update { it.copy(screen = Screen.LIST, listTopic = topic, quiz = null) }
 
     fun reveal() = _state.update { s -> s.copy(quiz = s.quiz?.copy(revealed = true)) }
 
