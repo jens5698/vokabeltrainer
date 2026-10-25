@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Diagonal geteilt: Union Jack oben links, Trikolore unten rechts. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group>
+        <clip-path android:pathData="M0,0 L108,0 L0,108 Z" />
+        <path android:fillColor="#012169" android:pathData="M0,0 H108 V108 H0 Z" />
+        <path android:strokeColor="#FFFFFF" android:strokeWidth="21.6"
+            android:pathData="M-54,0 L162,108 M162,0 L-54,108" />
+        <path android:strokeColor="#C8102E" android:strokeWidth="7.2"
+            android:pathData="M-54,0 L162,108 M162,0 L-54,108" />
+        <path android:fillColor="#FFFFFF" android:pathData="M36,0 H72 V108 H36 Z M0,36 H108 V72 H0 Z" />
+        <path android:fillColor="#C8102E" android:pathData="M43.2,0 H64.8 V108 H43.2 Z M0,43.2 H108 V64.8 H0 Z" />
+    </group>
+    <group>
+        <clip-path android:pathData="M108,0 L108,108 L0,108 Z" />
+        <path android:fillColor="#0055A4" android:pathData="M0,0 H36 V108 H0 Z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M36,0 H72 V108 H36 Z" />
+        <path android:fillColor="#EF4135" android:pathData="M72,0 H108 V108 H72 Z" />
+    </group>
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="5" android:pathData="M108,0 L0,108" />
+</vector>
